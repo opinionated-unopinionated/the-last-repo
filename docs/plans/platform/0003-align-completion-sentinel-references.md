@@ -44,10 +44,12 @@ How the checklist is sequenced and why. Call out dependencies between phases, an
 > One iteration = one checkbox. Pick the first unchecked item. Do only that. Check it off. Exit. The driver re-invokes with fresh context.
 
 ### Phase 1 — <name>
+
 - [x] **t1.01** …
 - [x] **t1.02** …
 
 ### Phase 2 — <name>
+
 - [x] **t2.01** …
 - [x] **t2.02** …
 
@@ -73,6 +75,7 @@ rm -f .ralph/COMPLETE
 ```
 
 The loop must:
+
 1. Re-read `AGENTS.md` and this plan each iteration (fresh context).
 2. Pick the first unchecked checkbox in §6.
 3. Implement only that task. No bundling.

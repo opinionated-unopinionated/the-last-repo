@@ -100,6 +100,7 @@ Every harness should encounter the same reading order, smallest-first:
 > One iteration = one checkbox. Pick the first unchecked item. Do only that. Check it off. Exit. The driver re-invokes with fresh context.
 
 ### Phase 1 — Project meta
+
 - [x] **t1.01** Create `LICENSE` (MIT 2026, "The Last Repo contributors")
 - [x] **t1.02** Create root `README.md`: project pitch, decisions table linking this plan, quickstart, contributing pointer
 - [x] **t1.03** Create `AGENTS.md`: progressive-disclosure entry. Lists key paths, reading order, Ralph-loop mandate, harness compatibility note. Hard cap: 100 lines
@@ -112,12 +113,14 @@ Every harness should encounter the same reading order, smallest-first:
 - [x] **t1.10** Create `.gitattributes` (LF normalization, common binary markers)
 
 ### Phase 2 — Monorepo shells
+
 - [x] **t2.01** Create `apps/README.md` — naming convention, scope subdir name = app name, port/env conventions
 - [x] **t2.02** Create `services/README.md` — backend equivalent
 - [x] **t2.03** Create `packages/README.md` — shared libraries; cross-language allowed
 - [x] **t2.04** Create `tools/README.md` — local tooling, generators, dev-only utilities
 
 ### Phase 3 — Documentation scaffold
+
 - [x] **t3.01** Create `docs/README.md` — map: specs/, plans/, adr/; scope subdirs (platform/, <service>/, <app>/); when to use each
 - [x] **t3.02** Create `docs/specs/README.md` — when to write a spec, naming (`NNNN-slug.md`), scope rules
 - [x] **t3.03** Create `docs/specs/TEMPLATE.md` — Goal, Non-goals, User stories, Acceptance criteria, Open questions
@@ -134,6 +137,7 @@ Every harness should encounter the same reading order, smallest-first:
 - [x] **t3.14** Create `docs/adr/platform/0006-progressive-disclosure-for-ai.md`
 
 ### Phase 4 — Scripts
+
 - [x] **t4.01** Confirm `scripts/ralph.sh` is present (created in genesis); harden if needed: iter cap, log dir, harness env var
 - [x] **t4.02** Create `scripts/harness.sh` — dispatch wrapper: `pi` (default) | `claude` | `codex`
 - [x] **t4.03** Create `scripts/new-spec.sh` — copy `docs/specs/TEMPLATE.md` into `<scope>/<NNNN>-<slug>.md`
@@ -142,10 +146,12 @@ Every harness should encounter the same reading order, smallest-first:
 - [x] **t4.06** Make all `scripts/*.sh` executable (`chmod +x`)
 
 ### Phase 5 — Build & loop entry
+
 - [x] **t5.01** Create `Makefile` — targets: `help`, `ralph`, `new-spec NAME=…`, `new-plan NAME=…`, `new-adr NAME=…`, `lint-docs`, `ci`
 - [x] **t5.02** Confirm `PROMPT.md` is present (created in genesis); ensure it instructs the agent to read this plan and pick exactly one task
 
 ### Phase 6 — GitHub integration
+
 - [x] **t6.01** Create `.github/workflows/ci.yml` — minimal: shellcheck on `scripts/`, markdown lint on `docs/`, tree integrity check
 - [x] **t6.02** Create `.github/workflows/ralph-guard.yml` — fail PRs that change `docs/plans/**` or `docs/specs/**` without a corresponding entry in `.ralph/logs/` or commit trailer `Ralph-Run: <plan-id>`
 - [x] **t6.03** Create `.github/ISSUE_TEMPLATE/bug.md`
@@ -154,6 +160,7 @@ Every harness should encounter the same reading order, smallest-first:
 - [x] **t6.06** Create `.github/PULL_REQUEST_TEMPLATE.md` — checklist: spec linked, plan linked, ADR if architectural, Ralph log if applicable
 
 ### Phase 7 — Verification
+
 - [x] **t7.01** Run `make help` and confirm all documented targets list
 - [x] **t7.02** Run `bash scripts/ralph.sh --dry-run` and confirm harness dispatch resolves for `pi`, `claude`, `codex`
 - [x] **t7.03** Run `make lint-docs` and confirm no failures
@@ -179,6 +186,7 @@ done
 ```
 
 The loop must:
+
 1. Re-read `AGENTS.md` and this plan each iteration (fresh context).
 2. Pick the first unchecked checkbox in §6.
 3. Implement only that task. No bundling.

@@ -1,0 +1,19 @@
+{
+  "default": true,
+
+  // Prose docs and ADRs are not hard-wrapped at 80 columns.
+  "MD013": false,
+
+  // Templates intentionally use placeholder tags like <slug>, <name>, <scope>.
+  "MD033": false,
+
+  // Tree/output blocks and shell snippets aren't always tagged with a language.
+  "MD040": false,
+
+  // Table column-alignment is purely aesthetic; GitHub renders fine either way.
+  "MD060": false,
+
+  // YAML frontmatter carries `title:` AND the body has `# Title`. Disable the
+  // frontmatter-title heuristic so MD025 only flags real in-body duplicates.
+  "MD025": { "front_matter_title": "" }
+}
