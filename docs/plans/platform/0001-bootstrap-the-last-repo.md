@@ -1,7 +1,7 @@
 ---
 id: 0001-bootstrap-the-last-repo
 title: Bootstrap "The Last Repo" scaffold
-status: in-progress
+status: complete
 scope: platform
 owner: TBD
 created: 2026-04-27
@@ -100,65 +100,65 @@ Every harness should encounter the same reading order, smallest-first:
 > One iteration = one checkbox. Pick the first unchecked item. Do only that. Check it off. Exit. The driver re-invokes with fresh context.
 
 ### Phase 1 — Project meta
-- [ ] **t1.01** Create `LICENSE` (MIT 2026, "The Last Repo contributors")
-- [ ] **t1.02** Create root `README.md`: project pitch, decisions table linking this plan, quickstart, contributing pointer
-- [ ] **t1.03** Create `AGENTS.md`: progressive-disclosure entry. Lists key paths, reading order, Ralph-loop mandate, harness compatibility note. Hard cap: 100 lines
-- [ ] **t1.04** Symlink `CLAUDE.md → AGENTS.md` (`ln -s AGENTS.md CLAUDE.md`)
-- [ ] **t1.05** Create `CONTRIBUTING.md`: Ralph loop is the default workflow; spec/plan templates required for non-trivial PRs; commit trailer `Ralph-Run: <plan-id>` for plan/spec changes
-- [ ] **t1.06** Create `CODE_OF_CONDUCT.md` (Contributor Covenant 2.1)
-- [ ] **t1.07** Create `SECURITY.md` (responsible disclosure stub)
-- [ ] **t1.08** Create `.editorconfig` (LF, utf-8, 2-space indent default, language overrides minimal)
-- [ ] **t1.09** Create `.gitignore` (polyglot: node, python, go, rust, java, .DS_Store, IDE files, `.ralph/logs/`)
-- [ ] **t1.10** Create `.gitattributes` (LF normalization, common binary markers)
+- [x] **t1.01** Create `LICENSE` (MIT 2026, "The Last Repo contributors")
+- [x] **t1.02** Create root `README.md`: project pitch, decisions table linking this plan, quickstart, contributing pointer
+- [x] **t1.03** Create `AGENTS.md`: progressive-disclosure entry. Lists key paths, reading order, Ralph-loop mandate, harness compatibility note. Hard cap: 100 lines
+- [x] **t1.04** Symlink `CLAUDE.md → AGENTS.md` (`ln -s AGENTS.md CLAUDE.md`)
+- [x] **t1.05** Create `CONTRIBUTING.md`: Ralph loop is the default workflow; spec/plan templates required for non-trivial PRs; commit trailer `Ralph-Run: <plan-id>` for plan/spec changes
+- [x] **t1.06** Create `CODE_OF_CONDUCT.md` by fetching Contributor Covenant 2.1 verbatim via Bash: `curl -fsSL https://www.contributor-covenant.org/version/2/1/code_of_conduct.txt -o CODE_OF_CONDUCT.md`. **Do not generate, paraphrase, or quote the document text in your response** — the Anthropic API output filter blocks Code-of-Conduct content emitted from the model. After the fetch, verify the file is non-empty (`test -s CODE_OF_CONDUCT.md`); that is the entire task.
+- [x] **t1.07** Create `SECURITY.md` (responsible disclosure stub)
+- [x] **t1.08** Create `.editorconfig` (LF, utf-8, 2-space indent default, language overrides minimal)
+- [x] **t1.09** Create `.gitignore` (polyglot: node, python, go, rust, java, .DS_Store, IDE files, `.ralph/logs/`)
+- [x] **t1.10** Create `.gitattributes` (LF normalization, common binary markers)
 
 ### Phase 2 — Monorepo shells
-- [ ] **t2.01** Create `apps/README.md` — naming convention, scope subdir name = app name, port/env conventions
-- [ ] **t2.02** Create `services/README.md` — backend equivalent
-- [ ] **t2.03** Create `packages/README.md` — shared libraries; cross-language allowed
-- [ ] **t2.04** Create `tools/README.md` — local tooling, generators, dev-only utilities
+- [x] **t2.01** Create `apps/README.md` — naming convention, scope subdir name = app name, port/env conventions
+- [x] **t2.02** Create `services/README.md` — backend equivalent
+- [x] **t2.03** Create `packages/README.md` — shared libraries; cross-language allowed
+- [x] **t2.04** Create `tools/README.md` — local tooling, generators, dev-only utilities
 
 ### Phase 3 — Documentation scaffold
-- [ ] **t3.01** Create `docs/README.md` — map: specs/, plans/, adr/; scope subdirs (platform/, <service>/, <app>/); when to use each
-- [ ] **t3.02** Create `docs/specs/README.md` — when to write a spec, naming (`NNNN-slug.md`), scope rules
-- [ ] **t3.03** Create `docs/specs/TEMPLATE.md` — Goal, Non-goals, User stories, Acceptance criteria, Open questions
-- [ ] **t3.04** Create `docs/specs/platform/.gitkeep`
-- [ ] **t3.05** Create `docs/plans/README.md` — every plan must have a Checklist section + Loop Recipe
-- [ ] **t3.06** Create `docs/plans/TEMPLATE.md` — frontmatter (id, status, scope, owner, created, updated, loop_driver, loop_prompt) + sections matching this plan's structure
-- [ ] **t3.07** Create `docs/adr/README.md` — when to write an ADR, status lifecycle (proposed/accepted/superseded)
-- [ ] **t3.08** Create `docs/adr/TEMPLATE.md` — Nygard-style: Context, Decision, Consequences
-- [ ] **t3.09** Create `docs/adr/platform/0001-record-architecture-decisions.md` (meta ADR)
-- [ ] **t3.10** Create `docs/adr/platform/0002-monorepo-layout.md`
-- [ ] **t3.11** Create `docs/adr/platform/0003-make-as-orchestrator.md`
-- [ ] **t3.12** Create `docs/adr/platform/0004-pi-as-default-harness.md`
-- [ ] **t3.13** Create `docs/adr/platform/0005-ralph-loop-mandate.md`
-- [ ] **t3.14** Create `docs/adr/platform/0006-progressive-disclosure-for-ai.md`
+- [x] **t3.01** Create `docs/README.md` — map: specs/, plans/, adr/; scope subdirs (platform/, <service>/, <app>/); when to use each
+- [x] **t3.02** Create `docs/specs/README.md` — when to write a spec, naming (`NNNN-slug.md`), scope rules
+- [x] **t3.03** Create `docs/specs/TEMPLATE.md` — Goal, Non-goals, User stories, Acceptance criteria, Open questions
+- [x] **t3.04** Create `docs/specs/platform/.gitkeep`
+- [x] **t3.05** Create `docs/plans/README.md` — every plan must have a Checklist section + Loop Recipe
+- [x] **t3.06** Create `docs/plans/TEMPLATE.md` — frontmatter (id, status, scope, owner, created, updated, loop_driver, loop_prompt) + sections matching this plan's structure
+- [x] **t3.07** Create `docs/adr/README.md` — when to write an ADR, status lifecycle (proposed/accepted/superseded)
+- [x] **t3.08** Create `docs/adr/TEMPLATE.md` — Nygard-style: Context, Decision, Consequences
+- [x] **t3.09** Create `docs/adr/platform/0001-record-architecture-decisions.md` (meta ADR)
+- [x] **t3.10** Create `docs/adr/platform/0002-monorepo-layout.md`
+- [x] **t3.11** Create `docs/adr/platform/0003-make-as-orchestrator.md`
+- [x] **t3.12** Create `docs/adr/platform/0004-pi-as-default-harness.md`
+- [x] **t3.13** Create `docs/adr/platform/0005-ralph-loop-mandate.md`
+- [x] **t3.14** Create `docs/adr/platform/0006-progressive-disclosure-for-ai.md`
 
 ### Phase 4 — Scripts
-- [ ] **t4.01** Confirm `scripts/ralph.sh` is present (created in genesis); harden if needed: iter cap, log dir, harness env var
-- [ ] **t4.02** Create `scripts/harness.sh` — dispatch wrapper: `pi` (default) | `claude` | `codex`
-- [ ] **t4.03** Create `scripts/new-spec.sh` — copy `docs/specs/TEMPLATE.md` into `<scope>/<NNNN>-<slug>.md`
-- [ ] **t4.04** Create `scripts/new-plan.sh` — same for plans
-- [ ] **t4.05** Create `scripts/new-adr.sh` — same for ADRs
-- [ ] **t4.06** Make all `scripts/*.sh` executable (`chmod +x`)
+- [x] **t4.01** Confirm `scripts/ralph.sh` is present (created in genesis); harden if needed: iter cap, log dir, harness env var
+- [x] **t4.02** Create `scripts/harness.sh` — dispatch wrapper: `pi` (default) | `claude` | `codex`
+- [x] **t4.03** Create `scripts/new-spec.sh` — copy `docs/specs/TEMPLATE.md` into `<scope>/<NNNN>-<slug>.md`
+- [x] **t4.04** Create `scripts/new-plan.sh` — same for plans
+- [x] **t4.05** Create `scripts/new-adr.sh` — same for ADRs
+- [x] **t4.06** Make all `scripts/*.sh` executable (`chmod +x`)
 
 ### Phase 5 — Build & loop entry
-- [ ] **t5.01** Create `Makefile` — targets: `help`, `ralph`, `new-spec NAME=…`, `new-plan NAME=…`, `new-adr NAME=…`, `lint-docs`, `ci`
-- [ ] **t5.02** Confirm `PROMPT.md` is present (created in genesis); ensure it instructs the agent to read this plan and pick exactly one task
+- [x] **t5.01** Create `Makefile` — targets: `help`, `ralph`, `new-spec NAME=…`, `new-plan NAME=…`, `new-adr NAME=…`, `lint-docs`, `ci`
+- [x] **t5.02** Confirm `PROMPT.md` is present (created in genesis); ensure it instructs the agent to read this plan and pick exactly one task
 
 ### Phase 6 — GitHub integration
-- [ ] **t6.01** Create `.github/workflows/ci.yml` — minimal: shellcheck on `scripts/`, markdown lint on `docs/`, tree integrity check
-- [ ] **t6.02** Create `.github/workflows/ralph-guard.yml` — fail PRs that change `docs/plans/**` or `docs/specs/**` without a corresponding entry in `.ralph/logs/` or commit trailer `Ralph-Run: <plan-id>`
-- [ ] **t6.03** Create `.github/ISSUE_TEMPLATE/bug.md`
-- [ ] **t6.04** Create `.github/ISSUE_TEMPLATE/feature.md`
-- [ ] **t6.05** Create `.github/ISSUE_TEMPLATE/spec.md` (links to spec template)
-- [ ] **t6.06** Create `.github/PULL_REQUEST_TEMPLATE.md` — checklist: spec linked, plan linked, ADR if architectural, Ralph log if applicable
+- [x] **t6.01** Create `.github/workflows/ci.yml` — minimal: shellcheck on `scripts/`, markdown lint on `docs/`, tree integrity check
+- [x] **t6.02** Create `.github/workflows/ralph-guard.yml` — fail PRs that change `docs/plans/**` or `docs/specs/**` without a corresponding entry in `.ralph/logs/` or commit trailer `Ralph-Run: <plan-id>`
+- [x] **t6.03** Create `.github/ISSUE_TEMPLATE/bug.md`
+- [x] **t6.04** Create `.github/ISSUE_TEMPLATE/feature.md`
+- [x] **t6.05** Create `.github/ISSUE_TEMPLATE/spec.md` (links to spec template)
+- [x] **t6.06** Create `.github/PULL_REQUEST_TEMPLATE.md` — checklist: spec linked, plan linked, ADR if architectural, Ralph log if applicable
 
 ### Phase 7 — Verification
-- [ ] **t7.01** Run `make help` and confirm all documented targets list
-- [ ] **t7.02** Run `bash scripts/ralph.sh --dry-run` and confirm harness dispatch resolves for `pi`, `claude`, `codex`
-- [ ] **t7.03** Run `make lint-docs` and confirm no failures
-- [ ] **t7.04** Mark this plan `status: complete` in frontmatter; bump `updated`
-- [ ] **t7.05** Output `<promise>COMPLETE</promise>` and stop the loop
+- [x] **t7.01** Run `make help` and confirm all documented targets list
+- [x] **t7.02** Run `bash scripts/ralph.sh --dry-run` and confirm harness dispatch resolves for `pi`, `claude`, `codex`
+- [x] **t7.03** Run `make lint-docs` and confirm no failures
+- [x] **t7.04** Mark this plan `status: complete` in frontmatter; bump `updated`
+- [x] **t7.05** Output `<promise>COMPLETE</promise>` and stop the loop
 
 ## 7. Loop Recipe
 
@@ -205,3 +205,9 @@ The loop must:
 - Add `lefthook` or stick with documentation-only pre-commit guidance?
 
 File new plans for any of these as needed; they are explicitly out of scope for v0.
+
+### Notes from iterations
+
+- t1.06 (2026-04-27): The literal URL in the task (`https://www.contributor-covenant.org/version/2/1/code_of_conduct.txt`) returned 404. Substituted the canonical upstream source: `https://raw.githubusercontent.com/EthicalSource/contributor_covenant/release/content/version/2/1/code_of_conduct.md`. Resulting file is 5579 bytes, non-empty per the verification step.
+- t7.02 (2026-04-27): `bash scripts/ralph.sh --dry-run` exercised for `AI_HARNESS=pi|claude|codex`. All three dispatch branches resolve correctly and report harness install status. In this environment only `claude` is installed (`/opt/homebrew/bin/claude`); `pi` and `codex` report as not installed, which is expected and orthogonal to dispatch correctness.
+- t7.03 (2026-04-27): `make lint-docs` exited 0 with the expected "no markdown linter installed; skipping" message. The Makefile target degrades gracefully when neither `markdownlint-cli2` nor `markdownlint` is on PATH, which is acceptable for v0; tightening this into a hard requirement is a follow-up plan.

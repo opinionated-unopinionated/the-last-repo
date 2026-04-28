@@ -1,0 +1,46 @@
+name: ralph-guard
+
+on:
+  pull_request:
+    paths:
+      - 'docs/plans/**'
+      - 'docs/specs/**'
+
+jobs:
+  ralph-guard:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Verify Ralph provenance for plan/spec changes
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          set -euo pipefail
+
+          changed=$(git diff --name-only "$BASE_SHA" "$HEAD_SHA" -- 'docs/plans/**' 'docs/specs/**' || true)
+          if [ -z "$changed" ]; then
+            echo "No plan or spec changes detected; nothing to guard."
+            exit 0
+          fi
+
+          echo "Plan/spec files changed in this PR:"
+          echo "$changed"
+
+          ralph_log_change=$(git diff --name-only "$BASE_SHA" "$HEAD_SHA" -- '.ralph/logs/**' || true)
+          if [ -n "$ralph_log_change" ]; then
+            echo "Found .ralph/logs/ change(s) — provenance satisfied:"
+            echo "$ralph_log_change"
+            exit 0
+          fi
+
+          if git log --format=%B "$BASE_SHA..$HEAD_SHA" | grep -Eq '^Ralph-Run:[[:space:]]*[A-Za-z0-9._/-]+'; then
+            echo "Found 'Ralph-Run:' commit trailer — provenance satisfied."
+            exit 0
+          fi
+
+          echo "::error::PRs that touch docs/plans/** or docs/specs/** must include either a .ralph/logs/ entry or a 'Ralph-Run: <plan-id>' commit trailer."
+          exit 1

@@ -1,0 +1,146 @@
+# Default: normalize line endings to LF in the repo, auto-detect binary files.
+* text=auto eol=lf
+
+# Source code — explicit text + LF (defensive against odd platform defaults)
+*.c        text eol=lf
+*.h        text eol=lf
+*.cc       text eol=lf
+*.cpp      text eol=lf
+*.hpp      text eol=lf
+*.cs       text eol=lf
+*.go       text eol=lf
+*.java     text eol=lf
+*.kt       text eol=lf
+*.kts      text eol=lf
+*.scala    text eol=lf
+*.rb       text eol=lf
+*.py       text eol=lf
+*.rs       text eol=lf
+*.swift    text eol=lf
+*.js       text eol=lf
+*.jsx      text eol=lf
+*.mjs      text eol=lf
+*.cjs      text eol=lf
+*.ts       text eol=lf
+*.tsx      text eol=lf
+*.vue      text eol=lf
+*.svelte   text eol=lf
+*.css      text eol=lf
+*.scss     text eol=lf
+*.sass     text eol=lf
+*.less     text eol=lf
+*.html     text eol=lf
+*.htm      text eol=lf
+*.xml      text eol=lf
+*.json     text eol=lf
+*.yml      text eol=lf
+*.yaml     text eol=lf
+*.toml     text eol=lf
+*.ini      text eol=lf
+*.md       text eol=lf
+*.txt      text eol=lf
+*.sql      text eol=lf
+*.proto    text eol=lf
+*.graphql  text eol=lf
+*.gql      text eol=lf
+
+# Shell + build scripts must be LF even on Windows checkouts
+*.sh       text eol=lf
+*.bash     text eol=lf
+*.zsh      text eol=lf
+Makefile   text eol=lf
+makefile   text eol=lf
+*.mk       text eol=lf
+Dockerfile text eol=lf
+
+# Windows-only scripts keep CRLF
+*.bat      text eol=crlf
+*.cmd      text eol=crlf
+*.ps1      text eol=crlf
+
+# Lockfiles — text but mark as generated to collapse diffs in review tools
+package-lock.json    text eol=lf linguist-generated=true
+yarn.lock            text eol=lf linguist-generated=true
+pnpm-lock.yaml       text eol=lf linguist-generated=true
+bun.lockb            binary
+poetry.lock          text eol=lf linguist-generated=true
+Pipfile.lock         text eol=lf linguist-generated=true
+go.sum               text eol=lf linguist-generated=true
+Cargo.lock           text eol=lf linguist-generated=true
+composer.lock        text eol=lf linguist-generated=true
+Gemfile.lock         text eol=lf linguist-generated=true
+
+# Images
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.gif   binary
+*.bmp   binary
+*.tif   binary
+*.tiff  binary
+*.ico   binary
+*.webp  binary
+*.avif  binary
+*.heic  binary
+*.heif  binary
+*.psd   binary
+*.ai    binary
+
+# Vector / fonts (SVG is text and diffable; fonts are binary)
+*.svg   text eol=lf
+*.eot   binary
+*.otf   binary
+*.ttf   binary
+*.woff  binary
+*.woff2 binary
+
+# Audio / video
+*.mp3   binary
+*.wav   binary
+*.flac  binary
+*.ogg   binary
+*.mp4   binary
+*.mov   binary
+*.avi   binary
+*.mkv   binary
+*.webm  binary
+
+# Archives
+*.zip    binary
+*.tar    binary
+*.tar.gz binary
+*.tgz    binary
+*.gz     binary
+*.bz2    binary
+*.xz     binary
+*.7z     binary
+*.rar    binary
+
+# Compiled / object / native binaries
+*.o      binary
+*.a      binary
+*.so     binary
+*.dylib  binary
+*.dll    binary
+*.exe    binary
+*.class  binary
+*.jar    binary
+*.war    binary
+*.pyc    binary
+*.pyo    binary
+*.wasm   binary
+
+# Documents
+*.pdf    binary
+*.doc    binary
+*.docx   binary
+*.xls    binary
+*.xlsx   binary
+*.ppt    binary
+*.pptx   binary
+
+# Datastores / certs / keyfiles
+*.db     binary
+*.sqlite binary
+*.p12    binary
+*.pfx    binary
